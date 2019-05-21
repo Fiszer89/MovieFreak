@@ -1,0 +1,136 @@
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\AprioriTests.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\AprioriTests.pdb
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\MovieFreak.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\System.Web.Mvc.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\EntityFramework.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\System.Web.Optimization.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Owin.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Google.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\PagedList.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\System.Web.Razor.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\MovieFreak.pdb
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\System.Web.Mvc.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\EntityFramework.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\System.Web.Optimization.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Google.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\PagedList.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\System.Web.Razor.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\obj\Debug\AprioriTests.csprojResolveAssemblyReference.cache
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\obj\Debug\AprioriTests.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\AprioriTests\obj\Debug\AprioriTests.pdb
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\AprioriTests.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\AprioriTests.pdb
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\MovieFreak.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\System.Web.Optimization.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\System.Web.Mvc.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Owin.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\EntityFramework.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\PagedList.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Google.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\System.Web.Razor.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\MovieFreak.pdb
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\MovieFreak.dll.config
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.xml
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\System.Web.Optimization.xml
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\System.Web.Mvc.xml
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\EntityFramework.xml
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\PagedList.xml
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Facebook.xml
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Google.xml
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\System.Web.Razor.xml
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.xml
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\obj\Debug\AprioriTests.csprojResolveAssemblyReference.cache
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\obj\Debug\AprioriTests.dll
+C:\Users\adfl\Desktop\MovieFreak\AprioriTests\obj\Debug\AprioriTests.pdb
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\AprioriTests.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\AprioriTests.pdb
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\MovieFreak.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\System.Web.Optimization.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\System.Web.Mvc.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Owin.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\EntityFramework.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\PagedList.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Google.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\System.Web.Razor.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\MovieFreak.pdb
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\MovieFreak.dll.config
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.xml
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\System.Web.Optimization.xml
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\System.Web.Mvc.xml
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\EntityFramework.xml
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\PagedList.xml
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Facebook.xml
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Security.Google.xml
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\System.Web.Razor.xml
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.xml
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\obj\Debug\AprioriTests.csprojAssemblyReference.cache
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\obj\Debug\AprioriTests.csproj.CoreCompileInputs.cache
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\obj\Debug\AprioriTests.csproj.CopyComplete
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\obj\Debug\AprioriTests.dll
+C:\Users\adfl\Desktop\moje projekty\MovieFreak\AprioriTests\obj\Debug\AprioriTests.pdb

@@ -1,0 +1,431 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hasseware.Net.TMDb</name>
+    </assembly>
+    <members>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetAsync(System.Int32,System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get the basic movie information for a specific movie id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.SearchAsync(System.String,System.String,System.Boolean,System.Nullable{System.Int32},System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Search for movies by title.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.DiscoverAsync(System.String,System.Boolean,System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.Int32},System.Nullable{System.Decimal},System.String,System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Discover movies by different types of data like average rating, number of votes, genres and certifications. You can get a valid list of certifications from the /certifications method.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetImagesAsync(System.Int32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get the images (posters and backdrops) for a specific movie id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetReviewsAsync(System.Int32,System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the reviews for a particular movie id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetListsAsync(System.Int32,System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the lists that the movie belongs to.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetCreditsAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the cast and crew information for a specific movie id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetVideosAsync(System.Int32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get the videos (trailers, teasers, clips, etc...) for a specific movie id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetSimilarAsync(System.Int32,System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the similar movies for a specific movie id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetGuestRatedAsync(System.String,System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get a list of rated movies for a specific guest session id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetPopularAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of popular movies on The Movie Database. This list refreshes every day.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetTopRatedAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of top rated movies. By default, this list will only include movies that have 10 or more votes. This list refreshes every day.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetNowPlayingAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of movies playing in theatres. This list refreshes every day. The maximum number of items this list will include is 100.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetUpcomingAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of upcoming movies. This list refreshes every day. The maximum number of items this list will include is 100.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetAlternativeTitlesAsync(System.Int32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get the alternative titles for a specific movie id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetKeywordsAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the plot keywords for a specific movie id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetReleasesAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the release date and certification information by country for a specific movie id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetTranslationsAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the translations for a specific movie id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetChangesAsync(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get a list of movie ids that have been edited. The maximum number of days that can be returned in a single request is 14.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetAccountRatedAsync(System.String,System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of rated movies (and associated rating) for an account.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetFavoritedAsync(System.String,System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of favorite movies for an account.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.GetWatchlistAsync(System.String,System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of movies on an accounts watchlist.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.SetRatingAsync(System.String,System.Int32,System.Decimal,System.Threading.CancellationToken)">
+            <summary>
+            This method lets users rate a movie. A valid session id or guest session id is required.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.SetFavoriteAsync(System.String,System.Int32,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Add or remove a movie to an accounts favorite list.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IMovieInfo.SetWatchlistAsync(System.String,System.Int32,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Add or remove a movie to an accounts watch list.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.SearchAsync(System.String,System.String,System.Nullable{System.DateTime},System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Search for TV shows by title.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.DiscoverAsync(System.String,System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.Int32},System.Nullable{System.Decimal},System.String,System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Discover TV shows by different types of data like average rating, number of votes, genres, the network they aired on and air dates.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetAsync(System.Int32,System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get the primary information about a TV series by id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetLatestAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get the latest TV show id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetSeasonAsync(System.Int32,System.Int32,System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get the primary information about a TV season by its season number.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetEpisodeAsync(System.Int32,System.Int32,System.Int32,System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get the primary information about a TV episode by combination of a season and episode number.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetIdsAsync(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+            Get the external ids for a TV series by id, TV season by its season number, or TV episode by combination of a season and episode number.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetCreditsAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the cast &amp; crew information about a TV series. Just like the website, we pull this information from the last season of the series.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetImagesAsync(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get the images (episode stills) for a TV series by id, TV season by its season number, or TV episode by combination of a season and episode number.
+            Since episode stills don't have a language, this call will always return all images.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetSimilarAsync(System.Int32,System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the similar TV shows for a specific tv id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetVideosAsync(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get the videos that have been added to a TV series (trailers, opening credits, etc...)
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetTranslationsAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of translations that exist for a TV series. These translations cascade down to the episode level.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetOnAirAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of TV shows that are currently on the air. This query looks for any TV show that has an episode with an air date in the next 7 days.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetAiringAsync(System.String,System.Int32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of TV shows that air today. Without a specified timezone, this query defaults to EST (Eastern Time UTC-05:00).
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetPopularAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of popular TV shows. This list refreshes every day.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetTopRatedAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of top rated TV shows. By default, this list will only include TV shows that have 2 or more votes. This list refreshes every day.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetChangesAsync(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get a list of TV show ids that have been edited. The maximum number of days that can be returned in a single request is 14.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetNetworkAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            This method is used to retrieve the basic information about a TV network. You can use this ID to search for TV shows with the discover. 
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetAccountRatedAsync(System.String,System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of rated TV shows (and associated rating) for an account.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetFavoritedAsync(System.String,System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of favorite TV shows for an account.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.GetWatchlistAsync(System.String,System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of TV shows on an accounts watchlist.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.SetRatingAsync(System.String,System.Int32,System.Decimal,System.Threading.CancellationToken)">
+            <summary>
+            This method lets users rate a TV show. A valid session id or guest session id is required.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.SetRatingAsync(System.String,System.Int32,System.Int32,System.Int32,System.Decimal,System.Threading.CancellationToken)">
+            <summary>
+            This method lets users rate a TV episode. A valid session id or guest session id is required.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.SetFavoriteAsync(System.String,System.Int32,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Add or remove a TV show to an accounts favorite list.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IShowInfo.SetWatchlistAsync(System.String,System.Int32,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Add or remove a TV show to an accounts watch list.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IGenreInfo.GetAsync(System.Net.TMDb.DataInfoType,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of genres.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IGenreInfo.GetMoviesAsync(System.Int32,System.String,System.Boolean,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of movies for a particular genre by id. By default, only movies with 10 or more votes are included.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.ICollectionInfo.GetAsync(System.Int32,System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get the basic collection information for a specific collection id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.ICollectionInfo.SearchAsync(System.String,System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Search for collections by name.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.ICollectionInfo.GetImagesAsync(System.Int32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get all of the images for a particular collection by collection id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.ICompanyInfo.GetAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            This method is used to retrieve all of the basic information about a company.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.ICompanyInfo.SearchAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Search for companies by name.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.ICompanyInfo.GetMoviesAsync(System.Int32,System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of movies associated with a particular company.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IPeopleInfo.GetAsync(System.Int32,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get the general person information for a specific id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IPeopleInfo.SearchAsync(System.String,System.Boolean,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Search for people by name.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IPeopleInfo.GetCreditsAsync(System.Int32,System.String,System.Net.TMDb.DataInfoType,System.Threading.CancellationToken)">
+            <summary>
+            Get the movie credits for a specific person id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IPeopleInfo.GetImagesAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the images for a specific person id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IPeopleInfo.GetIdsAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get the external ids for a specific person id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IPeopleInfo.GetChangesAsync(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get a list of people ids that have been edited. The maximum number of days that can be returned in a single request is 14.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IListInfo.GetAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get a list by id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IListInfo.ContainsAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Check to see if a movie ID is already added to a list.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IListInfo.CreateAsync(System.String,System.String,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            This method lets users create a new list. A valid session id is required.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IListInfo.InsertAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            This method lets users add new movies to a list that they created. A valid session id is required.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IListInfo.RemoveAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            This method lets users delete movies from a list that they created. A valid session id is required.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IListInfo.ClearAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Clear all of the items within a list. This is a irreversible action and should be treated with caution. A valid session id is required.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IListInfo.DeleteAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Delete a list by id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.IReviewInfo.GetAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get the full details of a review by id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.ISystemInfo.GetAccountAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get the basic information for an account. You will need to have a valid session id.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.ISystemInfo.GetCertificationsAsync(System.Net.TMDb.DataInfoType,System.Threading.CancellationToken)">
+            <summary>
+            Get the list of supported certifications for movie and/or tv shows.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.ISystemInfo.GetConfigurationAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get the system wide configuration information. Some elements of the API require some knowledge of this configuration data. 
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.ISystemInfo.GetTimezonesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get the list of supported timezones for the API methods that support them.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.ISystemInfo.GetJobsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get a list of valid jobs.
+            </summary>
+        </member>
+        <member name="T:System.Net.TMDb.ServiceClient">
+            <summary>
+            Contains the various API operations for the service client to interact with The Movie Database.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.ServiceClient.LoginAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            This method is used to generate a valid request token and authenticate user with a TMDb username and password.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.ServiceClient.GetSessionAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            This method is used to generate a session id for user based authentication, or a guest session if a null token is used.
+            A session id is required in order to use any of the write methods.
+            </summary>
+        </member>
+        <member name="M:System.Net.TMDb.ServiceClient.FindAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            The find method makes it easy to search for objects in our database by an external id. For instance, an IMDB ID.
+            This will search all objects (movies, TV shows and people) and return the results in a single response.
+            </summary>
+            <remarks>
+            The supported external sources for each object are as follows:
+            <list type="bullet">
+            <item><description>Movies: imdb_id</description></item>
+            <item><description>People: imdb_id, freebase_mid, freebase_id, tvrage_id</description></item>
+            <item><description>TV Series: imdb_id, freebase_mid, freebase_id, tvdb_id, tvrage_id</description></item>
+            <item><description>TV Seasons: freebase_mid, freebase_id, tvdb_id, tvrage_id</description></item>
+            <item><description>TV Episodes: imdb_id, freebase_mid, freebase_id, tvdb_id, tvrage_id</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:System.Net.TMDb.ServiceClient.SearchAsync(System.String,System.String,System.Boolean,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Search the movie, tv show and person collections with a single query. Each mapped result is the same response you would get from each independent search.
+            </summary>
+        </member>
+    </members>
+</doc>

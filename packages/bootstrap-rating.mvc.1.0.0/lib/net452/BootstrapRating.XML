@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BootstrapRating</name>
+    </assembly>
+    <members>
+        <member name="T:BootstrapRating.Controls.IRatingControl">
+            <summary>
+            Simple to use Html Helper for the jQuery bootstrap-rating plug-in.
+            </summary>
+        </member>
+        <member name="M:BootstrapRating.Controls.IRatingControl.Set(System.Web.Mvc.BootstrapRatingOptions)">
+            <summary>
+            Set an option against the control (value = true).
+            </summary>
+        </member>
+        <member name="M:BootstrapRating.Controls.IRatingControl.Set(System.Web.Mvc.BootstrapRatingOptions,System.Object)">
+            <summary>
+            Set an option against the control.
+            </summary>
+        </member>
+        <member name="M:BootstrapRating.Controls.IRatingControl.Class(System.String)">
+            <summary>
+            Set/overrite the class of the control (default = "rating").
+            </summary>
+        </member>
+        <member name="M:BootstrapRating.Controls.IRatingControl.Value(System.Double)">
+            <summary>
+            Set the current rating value.
+            </summary>
+        </member>
+        <member name="M:BootstrapRating.Controls.IRatingControl.Fractions(System.Int32)">
+            <summary>
+            Set the fractional rates. Indicates the number of equal parts that make up a whole symbol.
+            </summary>
+        </member>
+        <member name="M:BootstrapRating.Controls.IRatingControl.Start(System.Int32)">
+            <summary>
+            Set the desired range (default start is 0 and end is 5).
+            </summary>
+        </member>
+        <member name="M:BootstrapRating.Controls.IRatingControl.Stop(System.Int32)">
+            <summary>
+            Set the desired range (default start is 0 and end is 5).
+            </summary>
+        </member>
+        <member name="M:BootstrapRating.Controls.IRatingControl.Step(System.Int32)">
+            <summary>
+            Set the stepping increments used between start and stop.
+            </summary>
+        </member>
+        <member name="M:BootstrapRating.Controls.IRatingControl.Symbols(System.String,System.String)">
+            <summary>
+            Set the desired icons to be used in the control.
+            </summary>
+        </member>
+        <member name="P:BootstrapRating.Controls.IRatingControl.ReadOnly">
+            <summary>
+            Set the control as read-only.
+            </summary>
+        </member>
+        <member name="P:BootstrapRating.Controls.IRatingControl.Disabled">
+            <summary>
+            Set the control as disabled.
+            </summary>
+        </member>
+        <member name="T:System.Web.Mvc.BootstrapRatingExtensions">
+            <exclude/>
+        </member>
+        <member name="M:System.Web.Mvc.BootstrapRatingExtensions.BootstrapRating(System.Web.Mvc.HtmlHelper)">
+            <summary>
+            Returns a BootstrapRating control.
+            </summary>
+            <param name="helper">The HTML helper instance that this method extends.</param>
+            <returns>Html representation of the control.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.BootstrapRatingExtensions.BootstrapRating``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Returns a BootstrapRating control.
+            </summary>
+            <typeparam name="TModel">Model.</typeparam>
+            <typeparam name="TProperty">Property.</typeparam>
+            <param name="helper">The HTML helper instance that this method extends.</param>
+            <param name="expression">Property.</param>
+            <returns>Html representation of the control.</returns>
+        </member>
+        <member name="T:System.Web.Mvc.BootstrapRatingOptions">
+            <exclude/>
+        </member>
+        <member name="F:System.Web.Mvc.BootstrapRatingOptions.start">
+            <summary>
+            Set the desired range (default start is 0 and stop is 5).
+            </summary>
+        </member>
+        <member name="F:System.Web.Mvc.BootstrapRatingOptions.stop">
+            <summary>
+            Set the desired range (default start is 0 and stop is 5).
+            </summary>
+        </member>
+        <member name="F:System.Web.Mvc.BootstrapRatingOptions.disabled">
+            <summary>
+            Set the control as disabled.
+            </summary>
+        </member>
+        <member name="F:System.Web.Mvc.BootstrapRatingOptions.readOnly">
+            <summary>
+            Set the control as read-only.
+            </summary>
+        </member>
+        <member name="F:System.Web.Mvc.BootstrapRatingOptions.value">
+            <summary>
+            Set the rating value.
+            </summary>
+        </member>
+        <member name="F:System.Web.Mvc.BootstrapRatingOptions.filledSymbols">
+            <summary>
+            Set the desired icons to be used in the control.
+            </summary>
+        </member>
+        <member name="F:System.Web.Mvc.BootstrapRatingOptions.emptySymbols">
+            <summary>
+            Set the desired icons to be used in the control.
+            </summary>
+        </member>
+        <member name="F:System.Web.Mvc.BootstrapRatingOptions.fractions">
+            <summary>
+            Set the fractional rates. Indicates the number of equal parts that make up a whole symbol.
+            </summary>
+        </member>
+        <member name="F:System.Web.Mvc.BootstrapRatingOptions.step">
+            <summary>
+            Set the stepping increments used between start and stop.
+            </summary>
+        </member>
+        <member name="T:BootstrapRating.Controls.RatingControl">
+            <inheritDoc/>
+        </member>
+        <member name="F:BootstrapRating.Controls.RatingControl._input">
+            <exclude/>
+        </member>
+        <member name="F:BootstrapRating.Controls.RatingControl._class">
+            <exclude/>
+        </member>
+        <member name="M:BootstrapRating.Controls.RatingControl.#ctor(System.String,System.Double)">
+            <inheritDoc/>
+        </member>
+        <member name="M:BootstrapRating.Controls.RatingControl.ToHtmlString">
+            <exclude/>
+        </member>
+        <member name="M:BootstrapRating.Controls.RatingControl.Set(System.Web.Mvc.BootstrapRatingOptions)">
+            <inheritDoc/>
+        </member>
+        <member name="M:BootstrapRating.Controls.RatingControl.Set(System.Web.Mvc.BootstrapRatingOptions,System.Object)">
+            <inheritDoc/>
+        </member>
+        <member name="M:BootstrapRating.Controls.RatingControl.Class(System.String)">
+            <inheritDoc/>
+        </member>
+        <member name="M:BootstrapRating.Controls.RatingControl.Value(System.Double)">
+            <inheritDoc/>
+        </member>
+        <member name="M:BootstrapRating.Controls.RatingControl.Symbols(System.String,System.String)">
+            <inheritDoc/>
+        </member>
+        <member name="M:BootstrapRating.Controls.RatingControl.Fractions(System.Int32)">
+            <inheritDoc/>
+        </member>
+        <member name="M:BootstrapRating.Controls.RatingControl.Start(System.Int32)">
+            <inheritDoc/>
+        </member>
+        <member name="M:BootstrapRating.Controls.RatingControl.Stop(System.Int32)">
+            <inheritDoc/>
+        </member>
+        <member name="M:BootstrapRating.Controls.RatingControl.Step(System.Int32)">
+            <inheritDoc/>
+        </member>
+        <member name="P:BootstrapRating.Controls.RatingControl.ReadOnly">
+            <inheritDoc/>
+        </member>
+        <member name="P:BootstrapRating.Controls.RatingControl.Disabled">
+            <inheritDoc/>
+        </member>
+        <member name="T:BootstrapRating.Support.NameFieldAttribute">
+            <exclude/>
+        </member>
+        <member name="P:BootstrapRating.Support.NameFieldAttribute.Name">
+            <exclude/>
+        </member>
+        <member name="T:BootstrapRating.Support.ValueFieldAttribute">
+            <exclude/>
+        </member>
+        <member name="P:BootstrapRating.Support.ValueFieldAttribute.Value">
+            <exclude/>
+        </member>
+        <member name="T:BootstrapRating.Support.FieldAttributeExtensions">
+            <exclude/>
+        </member>
+        <member name="M:BootstrapRating.Support.FieldAttributeExtensions.FieldName(System.Enum)">
+            <exclude/>
+        </member>
+        <member name="M:BootstrapRating.Support.FieldAttributeExtensions.FieldValue(System.Enum)">
+            <exclude/>
+        </member>
+        <member name="T:BootstrapRating.Support.Extensions">
+            <exclude/>
+        </member>
+        <member name="M:BootstrapRating.Support.Extensions.ToStringLower(System.Object)">
+            <exclude/>
+        </member>
+    </members>
+</doc>

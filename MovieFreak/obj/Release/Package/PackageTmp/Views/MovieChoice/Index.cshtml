@@ -1,0 +1,101 @@
+﻿@model IEnumerable<MovieFreak.Models.MyMovie>
+@helper Truncate(string
+input, int length)
+{
+    if (input.Length <= length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron">
+    <p class="lead">Można oceniń dowolną ilość filmów, filmy generowane są losowo. Liste filmów można zresetowac odświeżając stronę lub przyciskiem Reset.</p>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    foreach (var item in Model) {
+        <div class="col-lg-3">
+            <p><img src="@item.MovieArtUrl" width="200" height="300" border="0"></p>
+            <a href="http://themoviedb.org/movie/@item.MyMovieID"><strong>@Truncate(item.Title, 20)</strong></a>
+            <div style="height:50px">
+            @Html.Partial("_Rating", item)
+            </div>
+            <p>&nbsp;</p>
+        </div>
+    }
+
+      
+    <div class="row" style="padding-right:inherit">
+        <div class="col-md-1 col-md-offset-10">
+            <p><a href=" ~/MovieChoice/Index" class="btn btn-default ">Reset</a></p>
+        </div>
+    </div>
+}
+
+@section header {
+    <link href="@Url.Content("~/Content/rating.css")" rel="stylesheet" />
+}
+
+@section scripts {
+<script src="@Url.Content("~/Scripts/rating.js")"></script>
+<script>
+    $(function () {
+        //tabs: http://twitter.github.com/bootstrap/javascript.html#tabs
+        $('#myTab a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+        // ratting system: https://github.com/irfan/jquery-star-rating
+        $('.ratting-item').rating(function (vote, event) {
+            var anchor = $(event.currentTarget),
+                pid = anchor.closest(".ratting-item").data("pid"),
+                url = '@Url.Action("RateProduct", "Services")';
+
+            // show message while doing the database round trip
+            $('.ratting-item[data-pid=' + pid + ']')
+                .next()
+                .text("Stwianie oceny...");
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: { rate: vote, id: pid },
+                success: function (data) {
+
+                    if (data.success) {
+                        // all went well, here you can say Thank you
+                        $('.ratting-item[data-pid=' + data.pid + ']')
+                            .next()
+                            .text("Oceniono!");
+                    }
+                    else {
+                        // There must be an Exception error, let's show it
+                        $('.ratting-item[data-pid=' + data.pid + ']')
+                            .next()
+                            .text("Cos poszlo nie tak...");
+                    }
+                },
+                error: function (err) {
+                    // the call thrown an error
+                    $('.result').text(err);
+                },
+                complete: function () {
+                    //$(".loading").hide();
+                }
+            });
+        });
+
+    });
+</script>
+
+}

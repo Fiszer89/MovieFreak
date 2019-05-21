@@ -1,0 +1,1734 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ceka</name>
+    </assembly>
+    <members>
+        <member name="T:DM.Ceka.Algorithms.Associaters.Apriori">
+            <summary>
+            single threaded approach of building a fast C# Apriori on behalf of an Ceka.ArffInstance
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Algorithms.Associaters.Associater">
+            <summary>
+            parent class for all association miners
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Algorithms.Miner">
+            <summary>
+            (root) parent class of all miners
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Miner.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Associater.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.APRIORI_COUNT">
+            <summary>
+            helps debugging in multithreaded usage
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.algorithm_id">
+            <summary>
+            is set in constructor from "APRIORI_COUNT", helps in multithreaded usage
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.sw">
+            <summary>
+            to measure exact performance results
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.source">
+            <summary>
+            the ArffInstance is passed in the constructor
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.hash">
+            <summary>
+            object to generate unique* uint hashes from strings
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.dataset_count">
+            <summary>
+            the amount of total datasets "@data"
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.dataset_attribute_count">
+            <summary>
+            the amount of attributes
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.different_item_count">
+            <summary>
+            the amount of total distinct items
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.different_pair_count">
+            <summary>
+            is like "different_item_count" but used during the 2nd cycle as they build pairs
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.rep_dataset">
+            <summary>
+            itemhashs in 2D -> [row][column] = itemhash
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.rep_items">
+            <summary>
+            count of total items -> [i][0] = itemhash, [i][1] = itemcount
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.rep_items_2nd">
+            <summary>
+            second level of total items ->[i][0] = itemhash_1, [i][1] = itemhash_2, [i][2] = paircount
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.rep_items_2nd_conf">
+            <summary>
+            second level of total items with confidence ->[i][0] = itemhash_1, [i][1] = itemhash_2, [i][2] = paircount, [i][3] = confidence / 10 = %
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.rep_items_n_conf">
+            <summary>
+            hold every next level N after 2 with pairs inclunding count and confidence
+            -> [i][n - 3] = itemhash_1, [i][n - 2] = itemhash_2, .. [i][n-1] = itemhash_2 .. [i][n] = paircount, [i][n + 1] = confidence / 10 = %
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.rep_n_list">
+            <summary>
+            to calculate the confidence of the next cycle the count from the old cycle_result is required, its faster and cheaper to just store the rep_cycle_n->results
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.threshold_min_support">
+            <summary>
+            minimum support for the found patterns
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.threshold_confidence">
+            <summary>
+            confidence required for the found patterns
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.inthashReturn">
+            <summary>
+            a faster way to get the original string value from the inthashes
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.cycles_made">
+            <summary>
+            making the internal "(int)cycle" accessable, dont rely on this.. its set in "do_n_cycles_routine"
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.total_runtime">
+            <summary>
+            total execution time of "run_default_process"
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.filterForSupport">
+            <summary>
+            just for result purpose
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Algorithms.Associaters.Apriori.filterForConfidence">
+            <summary>
+            just for result purpose
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.#ctor(DM.Ceka.ArffInstance)">
+            <summary>
+            single constructor, executes the total algorithm using default thresholds
+            </summary>
+            <param name="ai"></param>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.#ctor(DM.Ceka.ArffInstance,System.Single,System.Single)">
+            <summary>
+            traditional apriori constructor, enabling configuration through confidence and support
+            </summary>
+            <param name="ai"></param>
+            <param name="support"></param>
+            <param name="confidence"></param>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.#ctor(DM.Ceka.ArffInstance,System.Single,System.Single,System.String)">
+            <summary>
+            traditional apriori constructor that writes the result straight to a json file
+            </summary>
+            <param name="ai"></param>
+            <param name="support"></param>
+            <param name="confidence"></param>
+            <param name="file"></param>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.#ctor(DM.Ceka.ArffInstance,System.Single,System.Single,System.Boolean,System.Boolean,System.String,System.Boolean)">
+            <summary>
+            traditional apriori constructor that writes the json result to a file but leaves the possibility to disable filters
+            </summary>
+            <param name="ai"></param>
+            <param name="support"></param>
+            <param name="confidence"></param>
+            <param name="filterSupport"></param>
+            <param name="filterConfidence"></param>
+            <param name="file"></param>
+            <param name="prettyJson"></param>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.#ctor(DM.Ceka.ArffInstance,System.Single,System.Single,System.Boolean,System.Boolean,DM.Ceka.Saver.AprioriSaveTypes,System.Boolean,System.String)">
+            <summary>
+            similar to the traditional constructor with filter options, but leaves options for different result saving
+            </summary>
+            <param name="ai"></param>
+            <param name="support"></param>
+            <param name="confidence"></param>
+            <param name="filterSupport"></param>
+            <param name="filterConfidence"></param>
+            <param name="savt"></param>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.Run">
+            <summary>
+            simple public function, for basic constructor instances that do not execute "run_default_process"
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.run_default_process(System.Boolean,System.Boolean)">
+            <summary>
+            runs the default apriori algorithm for n cycles after first and second cycle and filters for support and confidence
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.do_first_cycle_preparation(System.Boolean)">
+            <summary>
+            calls all necessary functions for the first cycle step of the algorithm
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.do_second_cycle_pair_building(System.Boolean,System.Boolean)">
+            <summary>
+            calls all necessary functions for the second cycle step of the algorithm (first real cycle)
+            you cant call this unless "do_first_cycle_preparation" already ran
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.do_n_cycles_routine(System.Boolean,System.Boolean)">
+            <summary>
+            calls all necessary functions for the "N" cycle step of the algorithm (cycle routine)
+            you cant call this unless "do_first_cycle_preparation" and "do_second_cycle_pair_building" already ran
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.filter_n_cycle_result_for_confidence(System.Int32)">
+            <summary>
+            runs through pre-calculated item pair confidences and filters the item pairs for the given confidence
+            </summary>
+            <param name="n"></param>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.calculate_confidence_of_n_cycle_result(System.Int32)">
+            <summary>
+            uses the cycle_result that was stored before, to calculate the confidence of the current cycle result pairs
+            </summary>
+            <param name="n"></param>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.filter_n_cycle_items(System.Int32)">
+            <summary>
+            filters the item pairs for the given minimum support
+            </summary>
+            <param name="n"></param>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.run_n_cycle(System.Int32)">
+            <summary>
+            runs a cycle "N", make sure to run "build_pair_list_for_n_cycle" before -> counts the possible pairs in the dataset
+            </summary>
+            <param name="n">number of cycles</param>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.build_pair_list_for_n_cycle(System.Int32)">
+            <summary>
+            probably the most important function for the advanced part of the algorithm, it finds possible item pair combinations
+            that can be build from the current cycle's item pair set, it should also control the loop for the total upcoming generations of cycles
+            </summary>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.check_new_pair_collisions(System.UInt32[],System.Int32)">
+            <summary>
+            checks all first attributes of items in a new itemsetpair and if one doubles, it returns false
+            </summary>
+            <param name="newpair"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.get_indexes_of_first_pair_found(System.Collections.Generic.List{System.UInt32[]},System.UInt32[])">
+            <summary>
+            this function does not return the index of the in the pair list, it returns the index of the pair it collides with
+            in the original list, this function is used by "build_pair_list_for_n_cycle"
+            </summary>
+            <param name="pairs"></param>
+            <param name="pair"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.filter_second_cycle_result_for_confidence">
+            <summary>
+            clears the result list of the 2nd cycle with confidence "rep_items_2_conf" on behalf of the defined threshold confidence
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.calculate_confidence_of_second_cycle_result">
+            <summary>
+            adds another element to the "rep_items_2nd" array and calculates the confidence of each pair
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.filter_second_cycle_items">
+            <summary>
+            runs through the total itemlist "rep_items_2d" and kicks out pairs that are not in the minimum support range
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.run_second_cycle">
+            <summary>
+            second cycle runs after "calculate_simple_amount_of_items()" and builds the first level pattern
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.build_pair_list_for_second_cycle">
+            <summary>
+            builds a list of int[][3] including 
+            a combination of all itemhash, itemhash pairs and a count in the dataset
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.attribute_part_to_hash(System.UInt32)">
+            <summary>
+            this is as fast as it gets, tried every possibility (except unsafe code) to get an int representative of just the first attribute part of the item
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.calculate_simple_amount_of_items">
+            <summary>
+            runs through every item in the dataset row by column, using the function "increase_rep_item_count_by_inthash()" to find and count the item in "rep_items"
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.increase_rep_item_count_by_inthash(System.UInt32)">
+            <summary>
+            used by "calculate_simple_amount_of_items" to find the inthash value in "rep_items" and increase it
+            </summary>
+            <param name="inthash"></param>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.check_for_representative_anomalic_collisions">
+            <summary>
+            runs through all "rep_items" and checks if a hashvalue exsits more then once
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.get_representative_header_items">
+            <summary>
+            builds the "rep_items" property using the ArffInstance's Headers and also sets the different_items_count
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.turn_into_representative_ints">
+            <summary>
+            builds the int[,] containing the representative ArffInstance Datasets but with a 60x faster data access
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.get_representative_int_hash(System.String)">
+            <summary>
+            function that uses the hash object to generate a unique* uint from a (dataset_column) string
+            </summary>
+            <param name="dataset_column"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.filter_simple_amount_of_items_for_min_support">
+            <summary>
+            runs through the total itemlist "rep_items" and kicks out items that are not in the minimum support range
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.sort_cycle_result(System.UInt32[][],System.Int32)">
+            <summary>
+            builds a key array of support (int[][i=last] element) and maps the indexes to the key array, 
+            while using Array.Sort(k, v); to sort and return the cycle result array
+            </summary>
+            <param name="cr"></param>
+            <param name="sort_index">the index of the columns that is used as sort value, default = 3 works for 2nd cycle with confidence</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.get_flexible_cycle_result(System.UInt32[][],System.Int32,System.Int32)">
+            <summary>
+            2nd cycle result without confidence uint[][3]
+            sorts the input and builds an List of representative string values for the collected inthash 
+            pairs and their other values.., note: data_size is also the index of the first countable value
+            </summary>
+            <param name="cr"></param>
+            <param name="data_size">e.g. data_size = 2 if int[][0] and int[][1] are inthashes</param>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.log(System.String)">
+            <summary>
+            simple function that logs a string message into the console(default)
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.get_aobj_result">
+            <summary>
+            generates a result object (its nested in this class) using "get_flexible_cycle_result" the result object can be printed via json
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DM.Ceka.Algorithms.Associaters.Apriori.NestedAprioriResult">
+            <summary>
+            a nested class used to generate a pretty and accessable json object as result output for the algorithm
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.Apriori.NestedAprioriResult.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Algorithms.Associaters.Apriori.NestedAprioriResult.ItemTable">
+            <summary>
+            stores "rep_items"
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Algorithms.Associaters.Apriori.NestedAprioriResult.CycleResults">
+            <summary>
+            stores "rep_n_list"
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Algorithms.Associaters.Apriori.NestedAprioriResult.CyclesRan">
+            <summary>
+            stores "cycles_made"
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Algorithms.Associaters.Apriori.NestedAprioriResult.ValueableDatasets">
+            <summary>
+            stores "dataset_count"
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Algorithms.Associaters.Apriori.NestedAprioriResult.TotalDatasets">
+            <summary>
+            stores "source.Datasets.Data.Count;"
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Algorithms.Associaters.Apriori.NestedAprioriResult.MinimumSupport">
+            <summary>
+            stores "threshold_min_support"
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Algorithms.Associaters.Apriori.NestedAprioriResult.Confidence">
+            <summary>
+            stores "threshold_confidence"
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Algorithms.Associaters.Apriori.NestedAprioriResult.TotalExecutionTime">
+            <summary>
+            stores "total_runtime"
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Algorithms.Associaters.Apriori.NestedAprioriResult.AlgorithmId">
+            <summary>
+            stores "algorithm_id"
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Algorithms.Associaters.Apriori.NestedAprioriResult.Relation">
+            <summary>
+            relation of the dataset (source)
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Algorithms.Associaters.Apriori.NestedAprioriResult.Attributes">
+            <summary>
+            list of attributes present in the dataset's header
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Algorithms.Associaters.Apriori.NestedAprioriResult.SupportApplied">
+            <summary>
+            was minimum support used to filter itemsets?
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Algorithms.Associaters.Apriori.NestedAprioriResult.ConfidenceApplied">
+            <summary>
+            was confidence used to filter itemsets?
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Algorithms.Associaters.MultithreadedApriori">
+            <summary>
+            multithreaded version of the single threaded Apriori
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.MultithreadedApriori.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Algorithms.Associaters.MultithreadedApriori.NestedFastAprioriResult">
+            <summary>
+            nested result object for the multithread apriori
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Associaters.MultithreadedApriori.NestedFastAprioriResult.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Algorithms.Classifiers.Classifier">
+            <summary>
+            parent class for all classifiers
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Classifiers.Classifier.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Algorithms.Classifiers.SupportVectorMachine">
+            <summary>
+            supporting vector machine
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Classifiers.SupportVectorMachine.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Algorithms.Classifiers.SupportVectorMachine.NestedSVMResult">
+            <summary>
+            nested result object for supporting vector machine
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Classifiers.SupportVectorMachine.NestedSVMResult.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Algorithms.Clusterers.Clusterer">
+            <summary>
+            parent class for all clusterers
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Clusterers.Clusterer.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Algorithms.Clusterers.Cobweb">
+            <summary>
+            cobweb miner
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Clusterers.Cobweb.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Algorithms.Clusterers.Cobweb.NestedCobwebResult">
+            <summary>
+            nested result object for cobweb
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Clusterers.Cobweb.NestedCobwebResult.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Algorithms.Clusterers.KMeans">
+            <summary>
+            kmeans algorithm
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Clusterers.KMeans.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Algorithms.Clusterers.KMeans.NestedKMeansResult">
+            <summary>
+            nested result object for the kmeans algorithm
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Algorithms.Clusterers.KMeans.NestedKMeansResult.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.ArffInstance">
+            <summary>
+            represents an ARFF file in memory
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.#ctor(System.String)">
+            <summary>
+             empty arff instance, pass the relation name
+            </summary>
+            <param name="relation"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.#ctor(DM.Ceka.Library,DM.Ceka.Library,System.Boolean)">
+            <summary>
+            fully set arff instance, used by ArffLoader
+            </summary>
+            <param name="headers"></param>
+            <param name="datasets"></param>
+            <param name="skipIntCheck"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.integrityCheck">
+            <summary>
+            uses the library's dataset-check-functions to validate the loaded arff file components
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.addAttribute(System.String,System.String[])">
+            <summary>
+            adds an attribute, non recursive
+            </summary>
+            <param name="name"></param>
+            <param name="span"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.addNumericAttribute(System.String,System.String)">
+            <summary>
+            adds an numeric attribute, non recursive, "REAL, numeric"
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.changeAttribute(System.String,System.String[])">
+            <summary>
+            changes an attributes values(, non recursive)
+            </summary>
+            <param name="name"></param>
+            <param name="span"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.turnAttributeIntoNumeric(System.String,System.String)">
+            <summary>
+            turns attribute type into numeric type "REAL, numeric"
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.changeNumericAttribute(System.String,System.String)">
+            <summary>
+            changes the value of an numeric attribute "REAL, numeric"
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.removeAttribute(System.String)">
+            <summary>
+            removes an attribute, non recursive
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.getIndexOfAttribute(System.String)">
+            <summary>
+            gets the index of an attribute from its headers
+            </summary>
+            <param name="attribute"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.removeDatasetsPerAttributeValue(System.String,System.String)">
+            <summary>
+            does not only remove the attribute from its headers, but also removes every dataset that does not contain the value
+            </summary>
+            <param name="attribute"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.rebuildAttributeValueByRange(System.Int32,System.Int32)">
+            <summary>
+            turns something like this: age {50, 20, 70, 40, 50, -20, 80, 75, 25} into something like this: age {-20-0, 1-21, 22-42, 43-63, 64-84}
+            uses the whole dataset ('s values) for the range building and exchanges the total dataset values with the representative range values
+            makes use of the DM.Ceka.Helpers.RangeBuilder class
+            </summary>
+            <param name="attribute_index">the index of the attribute that contains numeric values</param>
+            <param name="rangeSteps">the steps that each range should cover, 100-200 = 10, 1000-2000 = 100, 10000-20000 = 1000 ..</param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.deletePatternMatchingDatasets(System.Collections.Generic.List{System.String})">
+            <summary>
+            removes datasets that fit to a specified pattern, you can use "*" wildcards
+            </summary>
+            <param name="pattern"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.removeUnusedAttributeValues">
+            <summary>
+            removes all attribute values that are not used in the dataset (quad-for-loop: use with caution..)
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.refineBackRangedAttribute(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            walks backwards through attributes values and counts the appearances in the dataset, removes dataset and attribute value if applies
+            </summary>
+            <param name="attributeIndex"></param>
+            <param name="refine"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.refineBackAllRangedAttributes(System.Int32,System.Int32)">
+            <summary>
+            refines all non numeric/ranged attributes
+            </summary>
+            <param name="refine"></param>
+            <param name="minAppearance"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.addDataset(System.String[])">
+            <summary>
+            adds an additional dataset to the library
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.changeDataset(System.Int32,System.String[])">
+            <summary>
+            changing a dataset means, that one has to refer it, unique lineNumbers are not yet implemented
+            </summary>
+            <param name="lineNr"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.removeDataset(System.Int32)">
+            <summary>
+            deleting a dataset means, that one has to refer it, unique lineNumbers are not yet implemented
+            </summary>
+            <param name="lineNr"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.addAttributeWithRecursiveDatsetChanges(System.String,System.String[])">
+            <summary>
+            adding an attribute to an existing arffinstance(file) means that all dataset stories have to be updated as well
+            </summary>
+            <param name="name"></param>
+            <param name="span"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.changeAttributeWithRecursiveDatasetChanges(System.String,System.String[])">
+            <summary>
+            changing an attribute of an existing arffinstance(file) means that all dataset stories have to be updated as well
+            </summary>
+            <param name="name"></param>
+            <param name="span"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.removeAttributeWithRecursiveDatasetChanges(System.String)">
+            <summary>
+            removing an attribute of an existing arffinstance(file) means that all dataset stories have to be updated as well
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.toCopy">
+            <summary>
+            generates a copy of this instance
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.ArffInstance.GetMemorySize">
+            <summary>
+            returns the in-memory byte size of the this arffinstance
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DM.Ceka.ArffInstance.Relation">
+            <summary>
+            name of the ARFFfile
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.ArffInstance.Headers">
+            <summary>
+            all Storys that follow from an @attribute block
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.ArffInstance.Datasets">
+            <summary>
+            all Storys that are present after the @data block of the ARFF file
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.CekaException">
+            <summary>
+            default library exception
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.CekaException.#ctor(System.String)">
+            <summary>
+            nothing special, just an inner library exception
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:DM.Ceka.EArffTypes">
+            <summary>
+            represents the pre-description of each ARFF file line
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.SimpleArffInstance">
+            <summary>
+            simplified version of ArffInstance
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.SimpleArffInstance.#ctor(DM.Ceka.ArffInstance)">
+            <summary>
+            turns a complex Library and Story related ArffInstance into a way simpler Data Structure,
+            which is easier to understand, and requires less memory space
+            </summary>
+            <param name="ai"></param>
+        </member>
+        <member name="M:DM.Ceka.SimpleArffInstance.ToComplexInstance">
+            <summary>
+            turns a simple arff instance into the complex Library and Story related ArffInstance Type
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.SimpleArffInstance.GetMemorySize">
+            <summary>
+            returns the in-memory byte size of the simple arff instance
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DM.Ceka.SimpleArffInstance.Relation">
+            <summary>
+            name of the ARFF file (dataset) = @relation
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.SimpleArffInstance.Attributes">
+            <summary>
+            @attribute lines content, values are split in List-string-
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.SimpleArffInstance.Datasets">
+            <summary>
+            @data lines, (data instances)
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Story">
+            <summary>
+            a story object is very ambigous it can hold any kind of "line-data", depending on the @"definition" in the file before, which can be later evaluated by its "this.type" property
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Story.name">
+            <summary>
+            name of the story (heading attribute)
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Story.value">
+            <summary>
+            value of the story (heading attribute), stores the numeric definition if isNumeric == true
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Story.type">
+            <summary>
+            most important property
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Story.data">
+            <summary>
+            for (data)sets => @data
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Story.values">
+            <summary>
+            for(header)sets => @attribute
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Story.#ctor">
+            <summary>
+            simple constructor to build Storys
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Story.#ctor(System.String,System.Int32)">
+            <summary>
+            main constructor that automatically takes care about parsing the arff line
+            </summary>
+            <param name="arffLine"></param>
+            <param name="line"></param>
+        </member>
+        <member name="M:DM.Ceka.Story.#ctor(System.String,System.String[],DM.Ceka.EArffTypes)">
+            <summary>
+            constructor for a faster init, that also enables to set the values of the dataset
+            </summary>
+            <param name="name"></param>
+            <param name="set"></param>
+            <param name="type"></param>
+        </member>
+        <member name="M:DM.Ceka.Story.Length">
+            <summary>
+            to make sure Stories can be easily used in loops
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Story.parseType(System.String)">
+            <summary>
+            this function takes care of the definition of the ARFF File line (that is passed as parameter) and sets the value(s) and type of the Story
+            </summary>
+            <param name="al"></param>
+        </member>
+        <member name="M:DM.Ceka.Story.testForNumericContent(System.String)">
+            <summary>
+            added on 28.02.2015 to support numeric values in ARFF files
+            </summary>
+            <param name="_value"></param>
+        </member>
+        <member name="M:DM.Ceka.Story.parseNumeric(System.String)">
+            <summary>
+            added on 28.02.2015 to support numeric values in ARFF files
+            </summary>
+            <param name="_value"></param>
+        </member>
+        <member name="M:DM.Ceka.Story.filterNameAndValue(System.String)">
+            <summary>
+            this function takes care of evaluating the values stored in an ARFF File line that contains an @attribute description "this" {..}
+            </summary>
+            <param name="_value"></param>
+        </member>
+        <member name="M:DM.Ceka.Story.furtherSplitOfValue">
+            <summary>
+            this function works together with filterNameAndValue(string _value) and is used to parse an ARFF file line of @attribute type
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Story.getDatasetSize">
+            <summary>
+            this function should only be called if the Story is a @data line and contains a dataset (it will return its size)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Story.explodeWithDelimiter(System.Char)">
+            <summary>
+            this function can be used if a dirty version of a string containing all dataset values is needed
+            </summary>
+            <param name="delim"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Story.containsEmptyValue">
+            <summary>
+            checks if this dataset contains '?' and is therefore possible irrelevant to algorithms that require clean and functioning datasets
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DM.Ceka.Story.isNumeric">
+            <summary>
+            added on 28.02.2015 to support numeric attributes in arff files, indicates wheather this story is the definition of a numeric attribute or not
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Story.Item(System.Int32)">
+            <summary>
+            this should be mainly used to access the data behind the story, because it does not require the understanding of the generated Story
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="P:DM.Ceka.Story.arffFileLine">
+            <summary>
+            this will return the ARFF File Line Number (if the Story was loaded from an ARFF-File (line))
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Story.Values">
+            <summary>
+            these are the values of the definition of an attributes span "@attributes", made internal because this[] use is safer
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Story.Data">
+            <summary>
+            these are the values of simple dataset "@data", made internal because this[] use is safer
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Story.Name">
+            <summary>
+            returns the name of an header-attribute, if this line describes a header attribute it something like "this" {..}
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Story.Value">
+            <summary>
+            return the value of an header-attribute
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Story.Type">
+            <summary>
+            as every Story is read and parsed from an ARFF line, the Type of the Story describes the ultimate definition of the value that it holds
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Library">
+            <summary>
+            represents an @attribute- or @data instance collection from an ARFF dataset
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Library.content">
+            <summary>
+            this class just wraps around this list
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Library.#ctor">
+            <summary>
+            empty constructor, set content via Library.Data = value;
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Library.headerSize">
+            <summary>
+            amount of attributes or dataset instances
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Library.Add(DM.Ceka.Story)">
+            <summary>
+            add an attribute or instance to the library (represented as Story)
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:DM.Ceka.Library.Remove(DM.Ceka.Story)">
+            <summary>
+            remove an attribute or instance from the library, do not use this for data instances!
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:DM.Ceka.Library.CleanUp">
+            <summary>
+            removes unused attribute types that were created during parsing an arff file
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Library.integretyCheck(DM.Ceka.Library)">
+            <summary>
+            checking if the size of a single story-dataset differs from the size of the defined headers
+            </summary>
+            <param name="header"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Library.deepIntegretyCheck(DM.Ceka.Library)">
+            <summary>
+            checking if the values of each single story-dataset element are allowed as they have to be defined in the headers
+            </summary>
+            <param name="header"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Library.removeEmptyValueDatasets">
+            <summary>
+            run this only on datasets! (a library that contains datasets only)
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Library.getRelationName">
+            <summary>
+            it will find the @relation story and return its name value
+            run this only on attributes! (a library that contains attributes only)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Library.removeRelation">
+            <summary>
+            removes the @relation story from the library
+            run this only on attributes! (a library that contains attributes only)
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Library.toCopy">
+            <summary>
+            returns a deep copy of this library
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DM.Ceka.Library.Data">
+            <summary>
+            the content (@attribute or @data dataset instances / rows)
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Common.LogFile">
+            <summary>
+            static logfile class, logs debug messages if enabled in helpers
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Common.LogFile.FILE">
+            <summary>
+            file to write the log to
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Common.LogFile.Log(System.String,System.IO.TextWriter)">
+            <summary>
+            writes a log-message to the logfile
+            </summary>
+            <param name="msg"></param>
+            <param name="w"></param>
+        </member>
+        <member name="M:DM.Ceka.Common.LogFile.AutoWrite(System.String)">
+            <summary>
+            creates streamwriter for a single log-entry (..and writes to log)
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:DM.Ceka.NamespaceDoc">
+            <summary>
+            ceka's main namespace, contains the core classes required for the in-memory ARFF model
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Algorithms.NamespaceDoc">
+            <summary>
+            ceka's algorithms namespace, contains all data mining algorithms
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Algorithms.Associaters.NamespaceDoc">
+            <summary>
+            contains all association rules miners e.g. apriori
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Algorithms.Classifiers.NamespaceDoc">
+            <summary>
+            contains all classification miners e.g. SVM
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Algorithms.Clusterers.NamespaceDoc">
+            <summary>
+            contains all cluster miners e.g. Cobweb
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Common.NamespaceDoc">
+            <summary>
+            contains common classes, such as LogFile or MurmurHash2
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Database.NamespaceDoc">
+            <summary>
+            contains database connector wrappers, that enabled ceka to compute from database tables
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Helpers.NamespaceDoc">
+            <summary>
+            contain static classes with helper functions, which are globally required
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Loader.NamespaceDoc">
+            <summary>
+            contains the ARFF file loading classes
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Saver.NamespaceDoc">
+            <summary>
+            contains the ARFF file and result saving classes
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.UHS.NamespaceDoc">
+            <summary>
+            containts SSU UHS HPHI related project classes
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Helpers.RangeBuilder">
+            <summary>
+            this class is used to build ranges from numeric @attribute's data instances
+            it turns something like: @attribute example { 122, 133, 144, 155, 210, 220, 230 }
+            into this: @attribute example { [120-160], [210-230] }
+            you dont have to call it from here, you can just call "ArffInstance.rebuildAttributeValueByRange(..)"
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Helpers.RangeBuilder.ENOPEN">
+            <summary>
+            [
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:DM.Ceka.Helpers.RangeBuilder.DELIM" -->
+        <member name="F:DM.Ceka.Helpers.RangeBuilder.ENCLOSE">
+            <summary>
+            ]
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Helpers.RangeBuilder.sb">
+            <summary>
+            stringbuilde used to build the range
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Helpers.RangeBuilder.#ctor(System.Int32,System.Int32)">
+            <summary>
+            single constructor
+            </summary>
+            <param name="l">lower range boundary</param>
+            <param name="u">upper range boundary</param>
+        </member>
+        <member name="M:DM.Ceka.Helpers.RangeBuilder.InRange(System.Int32)">
+            <summary>
+            checks if the value is in bounds of this range
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Helpers.RangeBuilder.ToString">
+            <summary>
+            returns a representative string of this range
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Helpers.RangeBuilder.ValueOf(System.Collections.Generic.List{DM.Ceka.Helpers.RangeBuilder},System.Int32,System.Int32)">
+            <summary>
+            finds and returns the representative range string in a range collection from a value
+            </summary>
+            <param name="r"></param>
+            <param name="value"></param>
+            <param name="rangeSplit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Helpers.RangeBuilder.BuildRange(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            builds a range collection from two bounds and steps in between
+            </summary>
+            <param name="lowBound"></param>
+            <param name="highBound"></param>
+            <param name="rangeSteps"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Helpers.RangeBuilder.ConvertToSimpleRanges(System.Collections.Generic.List{DM.Ceka.Helpers.RangeBuilder})">
+            <summary>
+            turns range collection into string array containing all ranges (used for arff.attribute.values exchange)
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="P:DM.Ceka.Helpers.RangeBuilder.lowerBound">
+            <summary>
+            lower boundary of the ranges
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Helpers.RangeBuilder.upperBound">
+            <summary>
+            upper boundary of the ranges
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Loader.AbstractLoader">
+            <summary>
+            abstract wrapper for the loader interface
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Loader.ILoader">
+            <summary>
+            just a file loader interface, members should speak for themselves
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Loader.AbstractLoader.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Loader.AbstractLoader.#ctor(System.String)">
+            <summary>
+            file to be loaded
+            </summary>
+            <param name="file"></param>
+        </member>
+        <member name="T:DM.Ceka.ArffFile">
+            <summary>
+            static class that contains mostly constant values and delimiters for ARFF file parsing and creation
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.ArffFile.FILE_EXTENSION">
+            <summary>
+            .arff
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.ArffFile.ARFF_RELATION">
+            <summary>
+            @relation
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.ArffFile.ARFF_DATA">
+            <summary>
+            @data
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.ArffFile.ARFF_ATTRIBUTE">
+            <summary>
+            @attribute
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.ArffFile.ATT_PRE">
+            <summary>
+            @
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.ArffFile.STORY_DELIMITTER">
+            <summary>
+            ,
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.ArffFile.ATT_NAME_COMB">
+            <summary>
+            '
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.ArffFile.ARFF_SPACE">
+            <summary>
+            " "
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.ArffFile.ATT_START">
+            <summary>
+            {
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.ArffFile.ATT_END">
+            <summary>
+            }
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.ArffFile.ATT_IGNO">
+            <summary>
+            %
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.ArffFile.ATT_EMPTY_VALUE">
+            <summary>
+            ?
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.ArffFile.ATT_UNS">
+            <summary>
+            numeric
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.ArffFile.ATT_UNS_2">
+            <summary>
+            real
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.ArffFile.ATT_UNDEFINED">
+            <summary>
+            UNDEFINED
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.ArffFile.ATT_SPACE_EXCHANGE">
+            <summary>
+            |
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.ArffFile.CEKA_EOF">
+            <summary>
+            eof description
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.ArffFile.CEKA_VERSION">
+            <summary>
+            current version of ceka
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.ArffFile.CEKA_AUTHOR">
+            <summary>
+            author string of ceka
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Loader.ArffLoader">
+            <summary>
+            loads and arff file into cekas arff instance in-memory model
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Loader.ArffLoader.lib_h">
+            <summary>
+            attributes library that will be filled and passed to the arff instance
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Loader.ArffLoader.lib_d">
+            <summary>
+            dataset library that will be filled and passed to the arff instance
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Loader.ArffLoader.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Loader.ArffLoader.#ctor(System.String)">
+            <summary>
+            main constructor
+            </summary>
+            <param name="file">file to be loaded, .arff is not needed!</param>
+        </member>
+        <member name="M:DM.Ceka.Loader.ArffLoader.loadArff">
+            <summary>
+            loads the (in constructor provided) file
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Loader.ArffLoader.getInstance">
+            <summary>
+            returns the arff instance that was read during loadArff()
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Loader.ArffLoader.getSimpleInstance">
+            <summary>
+            returns the arff instance that was read during loadArff() in a simpler memory model
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DM.Ceka.Loader.ArffLoader.Content">
+            <summary>
+            returns the ILoader content (read file as string)
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Loader.ArffLoader.Reader">
+            <summary>
+            returns the file reader
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Loader.ArffLoader.Dataset">
+            <summary>
+            returns the dataset library
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Loader.ArffLoader.Headers">
+            <summary>
+            retunrs the attributes library
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Helpers.Utils">
+            <summary>
+            static helper class, contains functions and values that are globally required
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Helpers.Utils.DEBUG">
+            <summary>
+            turns use of Console.WriteLine() on and off -> works also for algorithm workflow debugging
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Helpers.Utils.LOG">
+            <summary>
+            write debug messages to logfile
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Helpers.Utils.GetObjectMemoryUsage(System.Object)">
+            <summary>
+            returns the memory usage of a managed object (in bytes), not 100% accurate but it will do..
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Helpers.Utils.PrintArffImportHelp">
+            <summary>
+            displays an import help
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Helpers.Utils.SupportedAlgorithms">
+            <summary>
+            returns an array of supported algorithms (for any kind of lib related function selection)
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Helpers.Utils.SupportedArffFunctions">
+            <summary>
+            returns an array of supported arff altering functionalities (for any kind of lib related function selection)
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Helpers.Utils.SupportedArffFunctionsWOP">
+            <summary>
+            same as SupportedArffFunctions, but these functions do not require parameters
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Helpers.Utils.ArrayExplode(System.String[])">
+            <summary>
+            used in the getters of exploded arrays to turn array elements into concatted string
+            </summary>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Helpers.Utils.Debug(System.String)">
+            <summary>
+            main debug function of the lib (writes to log; if LOG == true)
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="P:DM.Ceka.Helpers.Utils.LOGFILE">
+            <summary>
+            logfile (activate Utils.LOG); default: "./ceka.log" (changes Common.LogFile.FILE)
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Helpers.Utils.CurrentDirectory">
+            <summary>
+            returns the current directory of the application that uses the assembly
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Helpers.Utils.SupportedAlgorithmsExploded">
+            <summary>
+            returns the exploded single string version of SupportedAlgorithms
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Helpers.Utils.SupportedArffFunctionExploded">
+            <summary>
+            returns the exploded single string version of SupportedArffFunctions
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Helpers.Utils.StaticAssembly">
+            <summary>
+            nested static class that returns members of the assembly(lib)
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Helpers.Utils.StaticAssembly.Reference">
+            <summary>
+            this library
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Helpers.Utils.StaticAssembly.Version">
+            <summary>
+            version of this library
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Helpers.Utils.StaticAssembly.Author">
+            <summary>
+            author of this library
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Database.CekaMySQL">
+            <summary>
+            class that turns mysql tables into arff instances
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Database.CekaMySQL.conStr">
+            <summary>
+            database connection string
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Database.CekaMySQL.connection">
+            <summary>
+            first database connection
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Database.CekaMySQL.connection2">
+            <summary>
+            second database connection
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Database.CekaMySQL.#ctor(System.String)">
+            <summary>
+            main constructor
+            </summary>
+            <param name="conStr">mysql connection string</param>
+        </member>
+        <member name="M:DM.Ceka.Database.CekaMySQL.query(System.String,System.Boolean)">
+            <summary>
+            simple query (with result-set) wrapper
+            </summary>
+            <param name="query"></param>
+            <param name="con2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Database.CekaMySQL.noQuery(System.String,System.Boolean)">
+            <summary>
+            simple query (without) result-set wrapper
+            </summary>
+            <param name="query"></param>
+            <param name="con2"></param>
+        </member>
+        <member name="M:DM.Ceka.Database.CekaMySQL.tableToInstance(System.String,System.String[],System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            turns table structur into attributes and table rows (content) into data rows
+            </summary>
+            <param name="table">the mysql database table</param>
+            <param name="table_col">a list of columns names that are to be read into the arff instance</param>
+            <param name="startIndex">table row start index; use -1 for no limit</param>
+            <param name="endIndex">table row end index; use -1 for no limit</param>
+            <param name="firstUndefined">can the first column of the passed column array be NULL</param>
+            <param name="secondUndefined">can the second column of the passed column array be NULL</param>
+            <returns>returns the generated arff instance</returns>
+        </member>
+        <member name="M:DM.Ceka.Database.CekaMySQL.getDistinctOccurencesInColumn(System.String,System.String)">
+            <summary>
+            select attributes possible values from all table rows -> @attribute { val1, val2, val3 ... }
+            </summary>
+            <param name="table"></param>
+            <param name="column"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Database.CekaMySQL.tableToValidatedInstance(System.String,System.String[],System.String[],System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            same as tableToInstance(), but it adds validity checking
+            </summary>
+            <param name="table"></param>
+            <param name="table_col"></param>
+            <param name="numeric"></param>
+            <param name="startIndex"></param>
+            <param name="endIndex"></param>
+            <param name="firstUndefined"></param>
+            <param name="secondUndefined"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM.Ceka.Database.CekaMySQL.close">
+            <summary>
+            closes both database connections
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Saver.ArffSaver">
+            <summary>
+            not a result-saver, this class is used to write arff instances (back) to files
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Saver.ArffSaver.OVERRIDE">
+            <summary>
+            should the saver override .arff files that already exist?, if this is false it will through an exception if so
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Saver.ArffSaver.#ctor(DM.Ceka.ArffInstance)">
+            <summary>
+            main constructor
+            </summary>
+            <param name="instance">the arff instance you want to write to a file</param>
+        </member>
+        <member name="M:DM.Ceka.Saver.ArffSaver.saveInstance(System.String,System.String[])">
+            <summary>
+            writes the arff instance (given in constructor or via ArffSaver.Instance = value) to a file
+            </summary>
+            <param name="file">filename, without .arff extension!</param>
+            <param name="comments">array of comments you might want to add to the arff file</param>
+        </member>
+        <member name="M:DM.Ceka.Saver.ArffSaver.writeComments(System.String[])">
+            <summary>
+            inner..writes comments to file
+            </summary>
+            <param name="comments"></param>
+        </member>
+        <member name="M:DM.Ceka.Saver.ArffSaver.writeRelation">
+            <summary>
+            inner..writes relation to file
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Saver.ArffSaver.writeHeaders">
+            <summary>
+            inner..writes @attributes to file
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Saver.ArffSaver.writeDatasets">
+            <summary>
+            inner..writes @data instances to file
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Saver.ArffSaver.writeEnd">
+            <summary>
+            inner... writes EOF to file
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Saver.ArffSaver.Instance">
+            <summary>
+            the arff instance that will be written to file
+            </summary>
+        </member>
+        <member name="P:DM.Ceka.Saver.ArffSaver.Writer">
+            <summary>
+            writer for the file..
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Saver.ResultSaver">
+            <summary>
+            abstract class for all algorithm related result saving (writing to file or printing to console)
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Saver.ResultSaver.value">
+            <summary>
+            result value as string
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Saver.ResultSaver.#ctor">
+            <summary>
+            empty constructor 
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Saver.ResultSaver.SaveToFile(System.String)">
+            <summary>
+            saves the result (this.value) to file
+            </summary>
+            <param name="file"></param>
+        </member>
+        <member name="M:DM.Ceka.Saver.ResultSaver.CLI">
+            <summary>
+            prints (saves) the result (this.value) to the console
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Saver.AprioriSaveTypes">
+            <summary>
+            possible save types for the apriori algorithm (used for fast-apriori as well)
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Saver.AprioriSaveTypes.NONE">
+            <summary>
+            default
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Saver.AprioriSaveTypes.JSON">
+            <summary>
+            JSON standard
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Saver.AprioriSaveTypes.JSON_PRETTY">
+            <summary>
+            JSON standard, human-readable (expanded)
+            </summary>
+        </member>
+        <member name="F:DM.Ceka.Saver.AprioriSaveTypes.WEKA">
+            <summary>
+            imitates WEKA's association rules miner result
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Saver.SVMSaveTypes">
+            <summary>
+            possible save types for the supporting vector machine algorithm
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Saver.CobwebSaveTypes">
+            <summary>
+            possible save types for the cobweb algorithm
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Saver.KMeansSaveTypes">
+            <summary>
+            possible save types for the kmeans algorithm
+            </summary>
+        </member>
+        <member name="T:DM.Ceka.Saver.SimpleJsonSaver">
+            <summary>
+            wraps the result saver and adds JSON serialisation in constructors
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Saver.SimpleJsonSaver.#ctor(System.Object,System.Boolean)">
+            <summary>
+            save any object
+            </summary>
+            <param name="res"></param>
+            <param name="pretty"></param>
+        </member>
+        <member name="M:DM.Ceka.Saver.SimpleJsonSaver.#ctor(System.Collections.Generic.List{System.Collections.Generic.List{System.String}},System.Boolean)">
+            <summary>
+            save flexible apriori result buffer (List-List-string--)
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Saver.SimpleJsonSaver.#ctor(DM.Ceka.Algorithms.Associaters.Apriori.NestedAprioriResult,System.Boolean)">
+            <summary>
+            save strict result object to JSON file (AprioriResult)
+            </summary>
+            <param name="res"></param>
+            <param name="pretty"></param>
+        </member>
+        <member name="M:DM.Ceka.Saver.SimpleJsonSaver.#ctor(DM.Ceka.Algorithms.Associaters.MultithreadedApriori.NestedFastAprioriResult,System.Boolean)">
+            <summary>
+            save strict result object to JSON file (MultiAprioriResult)
+            </summary>
+            <param name="res"></param>
+            <param name="pretty"></param>
+        </member>
+        <member name="M:DM.Ceka.Saver.SimpleJsonSaver.#ctor(DM.Ceka.Algorithms.Classifiers.SupportVectorMachine.NestedSVMResult,System.Boolean)">
+            <summary>
+            save strict result object to JSON file (SVMResult)
+            </summary>
+            <param name="res"></param>
+            <param name="pretty"></param>
+        </member>
+        <member name="M:DM.Ceka.Saver.SimpleJsonSaver.#ctor(DM.Ceka.Algorithms.Clusterers.Cobweb.NestedCobwebResult,System.Boolean)">
+            <summary>
+            save strict result object to JSON file (CobwebResult)
+            </summary>
+            <param name="res"></param>
+            <param name="pretty"></param>
+        </member>
+        <member name="M:DM.Ceka.Saver.SimpleJsonSaver.#ctor(DM.Ceka.Algorithms.Clusterers.KMeans.NestedKMeansResult,System.Boolean)">
+            <summary>
+            save strict result object to JSON file (KMeansResult)
+            </summary>
+            <param name="res"></param>
+            <param name="pretty"></param>
+        </member>
+        <member name="T:DM.Ceka.Saver.WekaAssociationRulesSaver">
+            <summary>
+            wraps the result saver and adds weka-result-alike stringbuilding in constructors
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.Saver.WekaAssociationRulesSaver.#ctor(DM.Ceka.Algorithms.Associaters.Apriori.NestedAprioriResult)">
+            <summary>
+            trys to mimic the output of Weka's Associator Rule Results (humanreadable) - AprioriResult
+            </summary>
+            <param name="result"></param>
+        </member>
+        <member name="T:DM.Ceka.UHS.HashComparison">
+            <summary>
+            containts functions to demonstrate uint hash performance
+            </summary>
+        </member>
+        <member name="M:DM.Ceka.UHS.HashComparison.run_int_vs_string_comparison(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            this function can estimate the amount of time that is likely saved due to uint hash comparison by the apriori algorithm on a specific dataset
+            </summary>
+            <param name="attributes">number of attributes in the dataset header; @attribute a1 {..}</param>
+            <param name="attribute_values">median of attribute value count in the attributes; @attribute .. { val1, val2, val3, .. }</param>
+            <param name="dataset_columns">@data row (instances) count of the dataset</param>
+            <param name="percentage">percentage (5%-85%) of item-pair checks that might be avoided by the algorithm (speeds it up)</param>
+            <returns>[0] = calculated comparisons, [1] = uint comparison time, [2] = string comparison time (times are milliseconds) </returns>
+        </member>
+        <member name="M:DM.Ceka.UHS.HashComparison.get_representative_int_hash(DM.Ceka.Common.MurmurHash2Simple,System.String)">
+            <summary>
+            turns string into representative (murmur2) uint hash
+            </summary>
+            <param name="hash"></param>
+            <param name="dataset_column"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,53 @@
+﻿@model MovieFreak.ViewModels.RecommendedView
+@{
+    ViewBag.Title = "Index";
+}
+@helper Truncate(string
+input, int length)
+{
+    if (input.Length <= length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+@using PagedList.Mvc;
+@using PagedList;
+
+ 
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    if(((List<MovieFreak.Models.MyMovie>)ViewBag.Movies).Count > 0)
+        { 
+        foreach (var item in ViewBag.OnePageOfProducts)
+        {
+            <div class="col-lg-3">
+                <p><img src="@item.MovieArtUrl" width="200" height="300" border="0"></p>
+                <div style="width:200px; height:40px">
+                    <a href="http://themoviedb.org/movie/@item.MyMovieID"><strong>@Truncate(item.Title, 50)</strong></a>             
+                </div>
+            </div>
+        }
+        }
+    else
+    {
+        <div class="jumbotron">
+            <p class="lead"> Postaraj się ocenić więcej filmów aby otrzymać rekomendowane filmy.</p>
+        </div>
+    }
+
+    <div class="row" style="padding-right:inherit">
+        <div class="col-md-5">
+            @Html.PagedListPager((IPagedList)ViewBag.OnePageOfProducts, page => Url.Action("Index", new { page }))
+        </div>
+    </div>
+}

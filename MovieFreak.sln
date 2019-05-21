@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieFreak", "MovieFreak\MovieFreak.csproj", "{B7E6309F-51B8-4F85-9252-B4662CE5E555}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseApplication", "DataBaseApplication\DataBaseApplication.csproj", "{56D5BF66-5BCA-404D-AF36-D0B7B33E419F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AprioriTests", "AprioriTests\AprioriTests.csproj", "{30521976-CBD0-4326-83AB-34B3225920BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7E6309F-51B8-4F85-9252-B4662CE5E555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7E6309F-51B8-4F85-9252-B4662CE5E555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7E6309F-51B8-4F85-9252-B4662CE5E555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7E6309F-51B8-4F85-9252-B4662CE5E555}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56D5BF66-5BCA-404D-AF36-D0B7B33E419F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56D5BF66-5BCA-404D-AF36-D0B7B33E419F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56D5BF66-5BCA-404D-AF36-D0B7B33E419F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56D5BF66-5BCA-404D-AF36-D0B7B33E419F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30521976-CBD0-4326-83AB-34B3225920BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30521976-CBD0-4326-83AB-34B3225920BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30521976-CBD0-4326-83AB-34B3225920BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30521976-CBD0-4326-83AB-34B3225920BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

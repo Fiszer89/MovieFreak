@@ -1,0 +1,176 @@
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\DataBaseApplication.exe.config
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\DataBaseApplication.exe
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\DataBaseApplication.pdb
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.AspNet.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.Clients.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.Core.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.OAuth.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.OpenId.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\EntityFramework.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Hasseware.Net.TMDb.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\MovieFreak.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\WebMatrix.Data.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\WebMatrix.WebData.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\System.Web.Mvc.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\System.Web.Optimization.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Owin.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.Google.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\PagedList.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Org.Mentalis.Security.Cryptography.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\System.Web.WebPages.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\System.Web.Razor.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\WebGrease.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Mono.Math.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Antlr3.Runtime.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\MovieFreak.pdb
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.AspNet.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.Core.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.OAuth.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.OpenId.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\EntityFramework.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Hasseware.Net.TMDb.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\WebMatrix.Data.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\WebMatrix.WebData.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\System.Web.Mvc.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\System.Web.Optimization.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.Google.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\PagedList.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Org.Mentalis.Security.Cryptography.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\System.Web.WebPages.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\System.Web.Razor.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Mono.Math.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\Antlr3.Runtime.pdb
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\obj\Debug\DataBaseApplication.csproj.App.config
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\obj\Debug\DataBaseApplication.csprojResolveAssemblyReference.cache
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\obj\Debug\DataBaseApplication.Form1.resources
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\obj\Debug\DataBaseApplication.Properties.Resources.resources
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\obj\Debug\DataBaseApplication.csproj.GenerateResource.Cache
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\obj\Debug\DataBaseApplication.exe
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\obj\Debug\DataBaseApplication.pdb
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\nunit.framework.dll
+C:\Users\Fiszerek\Desktop\praca magisterska\MovieFreak\DataBaseApplication\bin\Debug\nunit.framework.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\DataBaseApplication.exe.config
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\DataBaseApplication.exe
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\DataBaseApplication.pdb
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.AspNet.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.Clients.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.Core.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.OAuth.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.OpenId.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\EntityFramework.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Hasseware.Net.TMDb.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\MovieFreak.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Newtonsoft.Json.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\nunit.framework.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\WebMatrix.Data.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\WebMatrix.WebData.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\System.Web.Optimization.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\System.Web.Mvc.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Owin.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\PagedList.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.Google.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Org.Mentalis.Security.Cryptography.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\System.Web.WebPages.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\WebGrease.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\System.Web.Razor.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Mono.Math.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Antlr3.Runtime.dll
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\MovieFreak.pdb
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\MovieFreak.dll.config
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.AspNet.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.Core.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.OAuth.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.OpenId.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\EntityFramework.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Hasseware.Net.TMDb.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Newtonsoft.Json.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\nunit.framework.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\WebMatrix.Data.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\WebMatrix.WebData.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\System.Web.Optimization.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\System.Web.Mvc.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\PagedList.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.Facebook.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.Google.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Org.Mentalis.Security.Cryptography.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\System.Web.WebPages.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\System.Web.Razor.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Mono.Math.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\bin\Debug\Antlr3.Runtime.pdb
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\obj\Debug\DataBaseApplication.csproj.App.config
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\obj\Debug\DataBaseApplication.csprojResolveAssemblyReference.cache
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\obj\Debug\DataBaseApplication.Form1.resources
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\obj\Debug\DataBaseApplication.Properties.Resources.resources
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\obj\Debug\DataBaseApplication.csproj.GenerateResource.Cache
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\obj\Debug\DataBaseApplication.exe
+C:\Users\adfl\Desktop\MovieFreak\DataBaseApplication\obj\Debug\DataBaseApplication.pdb
